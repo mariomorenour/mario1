@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clases de Guitarra en La Molina | Mario Moreno</title>
+    <style>
+        /* Estilos generales */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header y Navegación */
+        header {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #007BFF;
+        }
+
+        /* Hero Section - AQUÍ ESTÁ EL CAMBIO */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://img.freepik.com/free-photo/acoustic-guitar-close-up-beautiful-colored-background_169016-3530.jpg');
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding-top: 60px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Secciones principales */
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        /* Servicios */
+        .services {
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Sobre mí */
+        .about {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        /* Testimonios */
+        .testimonials {
+            background-color: #f9f9f9;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        /* Contacto */
+        .contact {
+    background-color: #808080;
+    max-width: 100%;
+    padding: 5rem 2rem;
+    color: white; /* Para que el texto sea legible sobre el fondo */
+}
+
+        .contact-info {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            color: #007BFF;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #0056b3;
+        }
+
+        /* Botón principal */
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Mario Moreno</div>
+            <div class="nav-links">
+                <a href="#inicio">Inicio</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#sobre-mi">Sobre Mí</a>
+                <a href="#testimonios">Testimonios</a>
+                <a href="#contacto">Contacto</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1>Aprende Guitarra en La Molina</h1>
+            <p>Descubre el arte de tocar la guitarra con clases personalizadas para todos los niveles</p>
+            <a href="#contacto" class="cta-button">Reserva tu Primera Clase</a>
+        </div>
+    </section>
+
+    <section class="services" id="servicios">
+        <h2 class="section-title">Nuestros Servicios</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Clases para Principiantes</h3>
+                <p>Aprende desde cero con métodos probados y ejercicios prácticos</p>
+                <p><strong>S/. 20 por hora</strong></p>
+            </div>
+            <div class="service-card">
+                <h3>Clases Intermedias</h3>
+                <p>Mejora tu técnica y aprende teoría musical aplicada</p>
+                <p><strong>S/. 25 por hora</strong></p>
+            </div>
+            <div class="service-card">
+                <h3>Preparación para Eventos</h3>
+                <p>Prepárate para presentaciones y conciertos</p>
+                <p><strong>Precio a consultar</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="sobre-mi">
+        <img src="/api/placeholder/600/400" alt="Mario Moreno">
+        <div class="about-content">
+            <h2>Sobre Mí</h2>
+            <p>Con más de 5 años de experiencia enseñando guitarra, he tenido el privilegio de trabajar con Pepe Torres y Billy Vernao, reconocidos músicos del medio local.</p>
+            <p>Me he presentado en diversos eventos, incluyendo el Centro Cultural Japonés, y he ayudado a más de 100 estudiantes a alcanzar sus metas musicales.</p>
+            <p>Mi método de enseñanza se adapta a cada estudiante, asegurando un aprendizaje efectivo y entretenido.</p>
+        </div>
+    </section>
+
+    <section class="testimonials" id="testimonios">
+        <h2 class="section-title">Lo que dicen mis estudiantes</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <p>"Las clases con Mario son excelentes. Su método de enseñanza es muy claro y paciente."</p>
+                <p><strong>- Ana García</strong></p>
+            </div>
+            <div class="testimonial-card">
+                <p>"En 6 meses aprendí más de lo que esperaba. Totalmente recomendado."</p>
+                <p><strong>- Carlos Mendoza</strong></p>
+            </div>
+            <div class="testimonial-card">
+                <p>"Excelente profesor, muy dedicado y profesional."</p>
+                <p><strong>- Luis Pérez</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contacto">
+        <h2 class="section-title">Contacto</h2>
+        <div class="contact-info">
+            <p>¿Listo para empezar tu viaje musical? Contáctame por cualquiera de estos medios:</p>
+            <div class="social-links">
+                <a href="https://www.instagram.com/mariomorenour" target="_blank">Instagram: @mariomorenour</a>
+                <a href="https://wa.me/51947919825" target="_blank">WhatsApp: 947919825</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Clases de Guitarra Mario Moreno. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Smooth scroll para los enlaces de navegación
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Animación de la barra de navegación al hacer scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.backgroundColor = 'rgba(26, 26, 26, 0.9)';
+            } else {
+                header.style.backgroundColor = '#1a1a1a';
+            }
+        });
+    </script>
+</body>
+</html>
